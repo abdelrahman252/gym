@@ -146,4 +146,30 @@ body {
   .exercise-card {
     width: 280px;
   }
+
 }
+
+@media (max-width:567px) {
+  .react-horizontal-scrolling-menu--wrapper {
+    width: 100%;
+  }
+
+  .react-horizontal-scrolling-menu--scroll-container {
+
+    width: 300px;
+  }
+
+  .react-horizontal-scrolling-menu--inner-wrapper {
+    width: 100%;
+  }
+
+  .react-horizontal-scrolling-menu--item {
+    width: 100%;
+
+  }
+}
+
+/* react-horizontal-scrolling-menu--wrapper 
+react-horizontal-scrolling-menu--inner-wrapper
+react-horizontal-scrolling-menu--scroll-container  
+react-horizontal-scrolling-menu--item */
