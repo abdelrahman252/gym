@@ -149,24 +149,15 @@ body {
 
 }
 
-@media (max-width:567px) {
-  .react-horizontal-scrolling-menu--wrapper {
-    width: 100%;
-  }
+@media (max-width:767px) {
 
-  .react-horizontal-scrolling-menu--scroll-container {
-
-    width: 300px;
-  }
 
   .react-horizontal-scrolling-menu--inner-wrapper {
-    width: 100%;
+    width: 300px;
+    display: block;
   }
 
-  .react-horizontal-scrolling-menu--item {
-    width: 100%;
 
-  }
 }
 
 /* react-horizontal-scrolling-menu--wrapper 
