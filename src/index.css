@@ -147,18 +147,22 @@ body {
     width: 280px;
   }
 
-}
-
-@media (max-width:767px) {
-
-
   .react-horizontal-scrolling-menu--inner-wrapper {
-    width: 300px;
-    display: block !important;
+    width: 350px;
+
   }
 
+  .react-horizontal-scrolling-menu--scroll-container {
+    width: 350px;
 
+  }
+
+  .react-horizontal-scrolling-menu--item {
+    width: 100%;
+    margin-right: 20px;
+  }
 }
+
 
 /* react-horizontal-scrolling-menu--wrapper 
 react-horizontal-scrolling-menu--inner-wrapper
