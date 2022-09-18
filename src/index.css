@@ -324,5 +324,5 @@ a {
   }
 }
 .react-horizontal-scrolling-menu--scroll-container {
-  width: 1400px;
+  width: 1400px !important;
 }
