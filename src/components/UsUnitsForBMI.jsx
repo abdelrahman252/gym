@@ -18,14 +18,13 @@ const UsUnitsForBMI = () => {
   let calcBmi = (event) => {
     //prevent submitting
     event.preventDefault();
-    let height = (5 * 30.48 + 10 * 2.54) / 2.54;
+    let height = heightInFeet * 12 + heightInInches;
     console.log(height);
-    let w = weight / 2.2;
 
-    if (w === 0 || height === 0) {
+    if (weight === 0 || height === 0) {
       alert("Please enter a valid weight and height");
     } else {
-      let bmi = (w / (height * height)) * 703;
+      let bmi = (weight / (height * height)) * 703;
       setBmi(bmi.toFixed(1));
 
       // Logic for message

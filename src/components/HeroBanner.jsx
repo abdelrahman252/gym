@@ -40,7 +40,6 @@ const HeroBanner = () => (
           borderRadius: "4px",
           transition: "all .2s linear",
         }}
-        className="search-btn"
       >
         Explore Exercises
       </a>

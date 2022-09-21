@@ -3,15 +3,8 @@ import "./calc.css";
 
 import React, { useState } from "react";
 
-import "bootstrap/dist/css/bootstrap.min.css";
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableContainer,
-  TableRow,
-  Paper,
+
   Box,
   Typography,
 } from "@mui/material";
@@ -19,29 +12,12 @@ import MetricUnits from "../components/MetricUnits";
 import UsUnits from "../components/UsUnits";
 
 const Calc = () => {
-  const act = {
-    normal: 1,
-    Sedentary: 1.2,
-    Light: 1.375,
-    Moderate: 1.465,
-    Active: 1.55,
-    Very: 1.725,
-    Extra: 1.9,
-  };
+
   const [unit, setUnit] = useState("Calories");
   const [bmr, setBmr] = useState("");
   const [activity, setActivity] = useState("normal");
 
-  const rows = [
-    {
-      Sedentary: "Sedentary: little or no exercise",
-      Light: "Exercise 1-3 times/week",
-      Moderate: "Exercise 4-5 times/week",
-      Active: "Daily exercise or intense exercise 3-4 times/week",
-      Very: "Intense exercise 6-7 times/week",
-      Extra: "Very intense exercise daily, or physical job",
-    },
-  ];
+  
   return (
     <div>
       <Box my={7}>
@@ -100,133 +76,21 @@ const Calc = () => {
         </Tab.Content>
       </Tab.Container>
 
-      <div
-        style={{
-          display: "flex",
-          alignItems: "start",
-          gap: "3em",
-        }}
-      >
-        <TableContainer component={Paper} sx={{ marginTop: 10, maxWidth: 650 }}>
-          <Table sx={{ maxWidth: 650 }} aria-label="simple table">
-            <TableHead>
-              <TableRow>
-                <TableCell sx={{ fontSize: 24, fontWeight: "bold" }}>
-                  Activity Level
-                </TableCell>
-                <TableCell
-                  align="right"
-                  sx={{ fontSize: 24, fontWeight: "bold", color: "#be3b3b" }}
-                >
-                  {unit}
-                </TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {rows.map((row) => (
-                <>
-                  <TableRow key={row.id}>
-                    <TableCell>{row.Sedentary}</TableCell>
-                    <TableCell
-                      align="right"
-                      sx={{
-                        fontSize: 24,
-                        fontWeight: "bold",
-                        color: "#be3b3b",
-                      }}
-                    >
-                      {Math.ceil(bmr * 1.2)}
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>{row.Light}</TableCell>
-                    <TableCell
-                      align="right"
-                      sx={{
-                        fontSize: 24,
-                        fontWeight: "bold",
-                        color: "#be3b3b",
-                      }}
-                    >
-                      {Math.ceil(bmr * 1.375)}
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>{row.Moderate}</TableCell>
-                    <TableCell
-                      align="right"
-                      sx={{
-                        fontSize: 24,
-                        fontWeight: "bold",
-                        color: "#be3b3b",
-                      }}
-                    >
-                      {Math.ceil(bmr * 1.465)}
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>{row.Active}</TableCell>
-                    <TableCell
-                      align="right"
-                      sx={{
-                        fontSize: 24,
-                        fontWeight: "bold",
-                        color: "#be3b3b",
-                      }}
-                    >
-                      {Math.ceil(bmr * 1.55)}
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>{row.Very}</TableCell>
-                    <TableCell
-                      align="right"
-                      sx={{
-                        fontSize: 24,
-                        fontWeight: "bold",
-                        color: "#be3b3b",
-                      }}
-                    >
-                      {Math.ceil(bmr * 1.725)}
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell>{row.Extra}</TableCell>
-                    <TableCell
-                      align="right"
-                      sx={{
-                        fontSize: 24,
-                        fontWeight: "bold",
-                        color: "#be3b3b",
-                      }}
-                    >
-                      {Math.ceil(bmr * 1.9)}
-                    </TableCell>
-                  </TableRow>
-                </>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-        <Box mt={10}>
-          <Typography
-            variant="body1"
-            sx={{ maxWidth: 600, fontStyle: "italic" }}
-          >
-            <span style={{ fontSize: 24, fontStyle: "normal" }}>Exercise</span>{" "}
-            : 15-30 minutes of elevated heart rate activity.
-            <br />{" "}
-            <span style={{ fontSize: 24, fontStyle: "normal" }}>
-              Intense exercise
-            </span>
-            : 45-120 minutes of elevated heart rate activity. <br />
-            <span style={{ fontSize: 24, fontStyle: "normal" }}>
-              Very intense exercise
-            </span>{" "}
-            : 2+ hours of elevated heart rate activity.
-          </Typography>
-        </Box>
-      </div>
+      <Box mt={5}>
+        <Typography variant="body1" sx={{ maxWidth: 600, fontStyle: "italic" }}>
+          <span style={{ fontSize: 24, fontStyle: "normal" }}>Exercise</span> :
+          15-30 minutes of elevated heart rate activity.
+          <br />{" "}
+          <span style={{ fontSize: 24, fontStyle: "normal" }}>
+            Intense exercise
+          </span>
+          : 45-120 minutes of elevated heart rate activity. <br />
+          <span style={{ fontSize: 24, fontStyle: "normal" }}>
+            Very intense exercise
+          </span>{" "}
+          : 2+ hours of elevated heart rate activity.
+        </Typography>
+      </Box>
     </div>
   );
 };

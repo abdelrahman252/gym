@@ -3,74 +3,49 @@ import { Link } from "react-router-dom";
 import { Stack } from "@mui/material";
 import "./bmr.css";
 import Logo from "../assets/images/Logo.png";
+import { GiToggles } from "react-icons/gi";
 
-const Navbar = () => {
+import { Navbar, Nav, Container } from "react-bootstrap";
+
+const Header = () => {
   const [activeLink, setActiveLink] = useState("home");
+
   const onUpdateActiveLink = (value) => {
     setActiveLink(value);
   };
   return (
-    <Stack
-      direction="row"
-      justifyContent="space-around"
-      sx={{
-        gap: { sm: "123px", xs: "40px" },
-        mt: { sm: "32px", xs: "20px" },
-        justifyContent: "none",
-      }}
-      px="20px"
-    >
-      <Link to="/">
-        <img
-          src={Logo}
-          alt="logo"
-          style={{ width: "48px", height: "48px", margin: "0px 20px" }}
-        />
-      </Link>
-      <Stack
-        direction="row"
-        gap="40px"
-        fontFamily="Alegreya"
-        fontSize="24px"
-        alignItems="flex-end"
-      >
-        <Link
-          to="/"
-          style={{
-            textDecoration: "none",
-            color: "#3A1212",
-          }}
-          className={activeLink === "home" ? "bot" : ""}
-          onClick={() => onUpdateActiveLink("home")}
-        >
-          Home
-        </Link>
-        <a
-          href="#exercises"
-          style={{ textDecoration: "none", color: "#3A1212" }}
-          className={activeLink === "exercises" ? "bot" : ""}
-          onClick={() => onUpdateActiveLink("exercises")}
-        >
-          Exercises
-        </a>
+    <>
+      <Navbar expand="md">
+        <Container fluid>
+          <Navbar.Brand href="/">
+            <img src={Logo} alt="Title" />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="phone" />
+          <Navbar.Collapse id="phone">
+            <Nav style={{ marginLeft: "70px" }}>
+              <Nav.Link href="/" className="link">
+                Home{" "}
+              </Nav.Link>
 
-        <Link
-          to="/calc"
-          className={activeLink === "bmr" ? "bot" : ""}
-          onClick={() => onUpdateActiveLink("bmr")}
-        >
-          BMR Calc
-        </Link>
-        <Link
-          to="/BMI"
-          className={activeLink === "Bmi" ? "bot" : ""}
-          onClick={() => onUpdateActiveLink("Bmi")}
-        >
-          BMI Calc
-        </Link>
-      </Stack>
-    </Stack>
+              <Nav.Link href="#exercises" className="link">
+                {" "}
+                Exercises
+              </Nav.Link>
+              <Nav.Link href="/calc" className="link">
+                {" "}
+                BMR Calc{" "}
+              </Nav.Link>
+
+              <Nav.Link href="/BMI" className="link">
+                {" "}
+                BMI Calc{" "}
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </>
   );
 };
 
-export default Navbar;
+export default Header;

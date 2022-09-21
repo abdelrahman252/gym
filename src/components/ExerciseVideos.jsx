@@ -20,8 +20,11 @@ const ExerciseVideos = ({ exerciseVideos, name }) => {
         exercise videos
       </Typography>
       <Stack
-        sx={{ flexDirection: { lg: "row" }, gap: { lg: "110px", xs: "0px" } }}
-        justifyContent="flex-start"
+        sx={{
+          flexDirection: "row",
+          gap: { lg: "110px", xs: "50px", md: "80px" },
+        }}
+        justifyContent="space-around"
         flexWrap="wrap"
         alignItems="center"
       >

@@ -172,15 +172,14 @@ a {
 /* react-horizontal-scrolling-menu--wrapper 
 react-horizontal-scrolling-menu--inner-wrapper
 react-horizontal-scrolling-menu--scroll-container  
-react-horizontal-scrolling-menu--item */ */
-
-body {
+react-horizontal-scrolling-menu--item */
+*/ body {
   font-family: 'Josefin Sans';
   background-color: #FFFAFB;
 }
 
 * {
-  padding: 0px;
+  padding: 0;
   margin: 0px;
   box-sizing: border-box;
 
@@ -234,14 +233,38 @@ a {
   color: inherit !important;
 }
 
+.link {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  position: relative !important;
+}
+
+.link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: rgb(255, 38, 37);
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+}
+
+.link:hover::before {
+  width: 100%;
+}
+
 .hero-banner-img {
   position: absolute;
   right: 40px;
   top: 0px;
   width: 700px;
   height: 900px;
-  margin-top: -330px;
-
+  margin-top: -320px;
 }
 
 .exercise-card {
@@ -287,6 +310,10 @@ a {
   text-decoration: none;
 }
 
+.react-horizontal-scrolling-menu--scroll-container {
+  width: 1400px;
+}
+
 @media screen and (max-width:1200px) {
   .detail-image {
     width: 300px;
@@ -295,7 +322,7 @@ a {
 
 
   .react-horizontal-scrolling-menu--scroll-container {
-    width: 500px;
+    width: 300px;
   }
 
   .left-arrow,
@@ -308,7 +335,7 @@ a {
   }
 
   .exercise-card {
-    width: 320px;
+    width: 320px !important;
   }
 
   .exercise-video {
@@ -318,11 +345,57 @@ a {
 
 }
 
+
+
+
+
 @media screen and (max-width:400px) {
   .exercise-card {
-    width: 280px;
+    width: 160px !important;
+  }
+
+  .exercise-video {
+    width: 250px;
+    height: 250px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .react-horizontal-scrolling-menu--scroll-container {
+    width: 230px !important;
   }
 }
-.react-horizontal-scrolling-menu--scroll-container {
-  width: 1400px !important;
+
+@media screen and (max-width:567px) {
+  .exercise-card {
+    width: 200px !important;
+  }
+
+  .exercise-video {
+    width: 250px;
+    height: 250px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .react-horizontal-scrolling-menu--scroll-container {
+    width: 270px !important;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .exercise-card {
+    width: 250px !important;
+  }
+
+  .exercise-video {
+    width: 250px;
+    height: 250px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .react-horizontal-scrolling-menu--scroll-container {
+    width: 470px;
+  }
 }
