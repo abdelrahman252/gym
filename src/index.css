@@ -322,7 +322,7 @@ a {
 
 
   .react-horizontal-scrolling-menu--scroll-container {
-    width: 300px;
+    width: 500px;
   }
 
   .left-arrow,
@@ -396,6 +396,6 @@ a {
   }
 
   .react-horizontal-scrolling-menu--scroll-container {
-    width: 470px;
+    width: 470px !important;
   }
 }
